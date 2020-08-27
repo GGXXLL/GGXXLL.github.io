@@ -24,8 +24,8 @@ defaults: # 将所有配置选项使用<https://jekyllrb.com/docs/configuration/
   - scope:
       path: "https://github.com/GGXXLL/ggxxll.github.io-_post/blob/master" # an empty string here means all files in the project
     values: # 以下配置项也可以在任意页面自定义
-      # categories: "_posts"
-      categories: "/"
+      categories: "_posts"
+      # categories: "/"
       jekyll-theme-WuK: # 我的主题的自定义样式都在这个命名空间
         default:
           body:
@@ -747,8 +747,8 @@ webmaster_verifications: # <https://jekyll.github.io/jekyll-seo-tag/usage/>
   baidu: szbTSfUGAB
 
 
-# permalink: /_posts/:year-:month-:day-:title/ #生成文章的地址格式，我希望它和_posts目录下的格式一样
-permalink: /:year-:month-:day-:title/ #生成文章的地址格式，我希望它和_posts目录下的格式一样
+permalink: /_posts/:year-:month-:day-:title/ #生成文章的地址格式，我希望它和_posts目录下的格式一样
+# permalink: /:year-:month-:day-:title/ #生成文章的地址格式，我希望它和_posts目录下的格式一样
 # timezone: Asia/Shanghai # 解决githubpage显示时间不正确的问题，见<https://www.iana.org/time-zones>
 # future: false # 不发布时间在未来的文章
 
