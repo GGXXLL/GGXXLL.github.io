@@ -1,5 +1,5 @@
 ---
-title: 2020-08-28-Sublime Text3+OmniMarkupPreviewer出现404问题解决方案
+title: Sublime Text3+OmniMarkupPreviewer出现404问题解决方案
 tags: Sublime Text3
 ---
 
