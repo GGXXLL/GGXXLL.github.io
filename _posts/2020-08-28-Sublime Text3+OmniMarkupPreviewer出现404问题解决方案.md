@@ -1,6 +1,6 @@
 ---
-title: Sublime Text3+OmniMarkupPreviewer出现404问题解决方案
-tags: Sublime Text3
+title: SublimeText3+OmniMarkupPreviewer出现404问题解决方案
+tags: SublimeText3
 ---
 
 某日突然发现`Sublime Text3（3.2.2）`插件`OmniMarkupPreviewer`打开页面出现404错误
