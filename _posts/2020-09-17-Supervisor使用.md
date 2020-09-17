@@ -2,6 +2,7 @@
 title: Supervisor使用
 tags: Kibana
 ---
+
 supervisor安装使用, 并配置服务崩溃邮件报警
 
 ### 环境
@@ -9,58 +10,62 @@ supervisor安装使用, 并配置服务崩溃邮件报警
 
 ### 安装依赖: 
     `yum install -y supervisor && yum install -y sendmail && yum install -y mailx && pip3 install superlance`
-### 配置项:
-    - 配置邮件:
-        首先:`vim /etc/mail.rc`, 然后添加如下内容, 配置完成进行测试:
 
-        `echo 'this is test'| /usr/bin/mail -s 'xxxxx' xxx@xx.com`:
+### 配置邮件:
+
+1. `vim /etc/mail.rc`, 然后添加如下内容:
 
 ```yaml
-        # 发件人邮箱
-        set from=xxx@xxx.com  
-        # smtp服务
-        set smtp=smtps://smtp.xxx.com:465  
-        # 用户名
-        set smtp-auth-user=xxx@xxx.com  
-        # 密码
-        set smtp-auth-password=xxx  
-        set ssl-verify=ignore
+# 发件人邮箱
+set from=xxx@xxx.com  
+# smtp服务
+set smtp=smtps://smtp.xxx.com:465  
+# 用户名
+set smtp-auth-user=xxx@xxx.com  
+# 密码
+set smtp-auth-password=xxx  
+set ssl-verify=ignore
 ```
+​   2.测试邮件: `echo 'this is test'| /usr/bin/mail -s 'xxxxx' xxx@xx.com`:
 
-    - 配置项目: 
-        编辑项目的配置文件, `vim /etc/supervisord.d/xxx.ini`
+### 配置项目:
+
+编辑项目的配置文件, `vim /etc/supervisord.d/xxx.ini`
 
 ```ini
-    # projectName
-    [program:projectName]
-    # 设置命令在指定的目录内执行
-    directory=projectPath
-    # 这里为您要管理的项目的启动命令
-    command=projectRunCmd
-    # 以哪个用户来运行该进程
-    user=root
-    # supervisor 启动时自动该应用
-    autostart=true
-    # 进程退出后自动重启进程
-    autorestart=true
-    # 进程持续运行多久才认为是启动成功
-    startsecs=2
-    # 重试次数
-    startretries=3
-    # stderr 日志输出位置
-    stderr_logfile=path/stderr.log
-    # stdout 日志输出位置
-    stdout_logfile=path/stdout.log
-
-
-    [eventlistener:crashmail]
-    command=crashmail -p senddemo -s "echo 'projectName crashed!!'| /usr/bin/mail -s 'projectName' xxx@xx.com,xxx@xx.com"
-    events=PROCESS_STATE_EXITED
-    ## stderr 日志输出位置
-    stderr_logfile=path/crashmail/stderr.log
-    ## stdout 日志输出位置
-    stdout_logfile=path/crashmail/stdout.log
+# 项目相关配置
+[program:projectName]
+# 设置命令在指定的目录内执行
+directory=projectPath
+# 这里为您要管理的项目的启动命令
+command=projectRunCmd
+# 以哪个用户来运行该进程
+user=root
+# supervisor 启动时自动该应用
+autostart=true
+# 进程退出后自动重启进程
+autorestart=true
+# 进程持续运行多久才认为是启动成功
+startsecs=2
+# 重试次数
+startretries=3
+# stderr 日志输出位置
+stderr_logfile=path/stderr.log
+# stdout 日志输出位置
+stdout_logfile=path/stdout.log
 ```
+
+```ini
+# 报警邮件相关配置
+[eventlistener:crashmail]
+command=crashmail -p senddemo -s "echo 'projectName crashed!!'| /usr/bin/mail -s 'projectName' xxx@xx.com,xxx@xx.com"
+events=PROCESS_STATE_EXITED
+## stderr 日志输出位置
+stderr_logfile=path/crashmail/stderr.log
+## stdout 日志输出位置
+stdout_logfile=path/crashmail/stdout.log
+```
+
 
 ### 相关命令: 
 ```shell
