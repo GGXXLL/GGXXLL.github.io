@@ -1,6 +1,6 @@
 ---
 title: Supervisor使用
-tags: Kibana
+tags: Supervisor
 ---
 
 supervisor安装使用, 并配置服务崩溃邮件报警
