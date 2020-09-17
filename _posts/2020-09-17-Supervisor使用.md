@@ -9,12 +9,16 @@ supervisor安装使用, 并配置服务崩溃邮件报警
 系统: Centos7, python3
 
 ### 安装依赖: 
-    `yum install -y supervisor && yum install -y sendmail && yum install -y mailx && pip3 install superlance`
+```shell
+yum install -y supervisor && \
+yum install -y sendmail && \
+yum install -y mailx && \
+pip3 install superlance
+```
 
 ### 配置邮件:
 
-1. `vim /etc/mail.rc`, 然后添加如下内容:
-
+1. `vim /etc/mail.rc`, 然后添加如下内容:  
 ```yaml
 # 发件人邮箱
 set from=xxx@xxx.com  
@@ -26,7 +30,7 @@ set smtp-auth-user=xxx@xxx.com
 set smtp-auth-password=xxx  
 set ssl-verify=ignore
 ```
-​   2.测试邮件: `echo 'this is test'| /usr/bin/mail -s 'xxxxx' xxx@xx.com`:
+2. 测试邮件: `echo 'this is test'| /usr/bin/mail -s 'xxxxx' xxx@xx.com`
 
 ### 配置项目:
 
