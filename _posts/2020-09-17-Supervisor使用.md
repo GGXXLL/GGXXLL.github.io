@@ -10,10 +10,7 @@ supervisor安装使用, 并配置服务崩溃邮件报警
 
 ### 安装依赖: 
 ```shell
-yum install -y supervisor && \
-yum install -y sendmail && \
-yum install -y mailx && \
-pip3 install superlance
+yum install -y supervisor sendmail mailx && pip3 install superlance
 ```
 
 ### 配置邮件:
