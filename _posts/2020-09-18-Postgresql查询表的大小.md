@@ -3,6 +3,8 @@ title: Postgresql查询表的大小
 tags: Postgresql
 ---
 
+原贴: https://www.cnblogs.com/winkey4986/p/6433704.html
+
 --数据库中单个表的大小（不包含索引）
 ```sql
 select pg_size_pretty(pg_relation_size('表名'));
