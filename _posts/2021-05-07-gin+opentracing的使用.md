@@ -1,6 +1,9 @@
 ---
 title: gin+opentracing的使用
-tags: Bug, Golang
+tags: 
+    - Bug
+    - Golang
+    - gin
 ---
 
 ### 环境

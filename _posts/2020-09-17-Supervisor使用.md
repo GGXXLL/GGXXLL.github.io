@@ -1,6 +1,7 @@
 ---
 title: Supervisor使用
-tags: Supervisor
+tags: 
+    - Supervisor
 ---
 
 supervisor安装使用, 并配置服务崩溃邮件报警

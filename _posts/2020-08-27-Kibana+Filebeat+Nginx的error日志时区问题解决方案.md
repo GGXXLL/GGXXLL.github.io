@@ -1,6 +1,7 @@
 ---
 title: Kibana+Filebeat+Nginx的error日志时区问题解决方案
-tags: Kibana
+tags: 
+    - Kibana
 ---
 
 使用Kibana + Filebeat + Nginx 进行日志监控，Nginx的error日志的时区提前了8个小时，解决方案如下：

@@ -1,6 +1,7 @@
 ---
 title: Postgresql查询表的大小
-tags: Postgresql
+tags: 
+    - Postgresql
 ---
 
 原贴: https://www.cnblogs.com/winkey4986/p/6433704.html
